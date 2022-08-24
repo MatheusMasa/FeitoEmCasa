@@ -1,11 +1,15 @@
 ﻿@model IEnumerable<Pizza>
 
-<partial name="_Btn_cadastrar" model="nameof(Pizza)" />
+@*<partial name="_Btn_cadastrar" model="nameof(Pizza)" />*@
 
 <div class="row">
     <div class="col-md-10 offset-md-1">
+
+        <partial name="_Btn_cadastrar" model="nameof(Pizza)" />
+
         <div class="col-12 my-2">
-            <input class="form-control" type="text" name="nome" id="nome" placeholder="Buscar pizza... " />
+
+            <input class="form-control" type="text" name="nome" id="nome" placeholder="Buscar" />
         </div>
 
         <table class="table table-striped">
@@ -21,32 +25,31 @@
                 @foreach (var pizza in Model)
                 {
 
-                    <tr>
-                        <td>
-                            <div class="d-flex flex-column">
-                                <a class="btn btn-success" asp-action="Atualizar" asp-route-id="@pizza.Id">
-                                    <i class="fa-solid fa-pen-to-square"></i>
-                                    Editar
-                                </a>
+    <tr>
+        <td>
+            <div class="d-flex flex-column col-6">
+                <a class="btn btn-primary" asp-action="Atualizar" asp-route-id="@pizza.Id">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    Editar
+                </a>
 
-                                <a class="btn btn-primary mt-1" asp-action="Detalhes" asp-route-id="@pizza.Id">
-                                    <i class="fa-solid fa-eye"></i>
-                                    Ver
-                                </a>
+                <a class="btn btn-warning mt-1" asp-action="Detalhes" asp-route-id="@pizza.Id">
+                    <i class="fa-solid fa-eye"></i>
+                    Ver
+                </a>
 
-                                <a class="btn btn-danger mt-1" asp-action="Deletar" asp-route-id="@pizza.Id">
-                                    <i class="fa-solid fa-trash-can"></i>
-                                    Excluir
-                                </a>
-                            </div>
-                        </td>
-                        <td class="align-middle">
-                            <img src="@pizza.FotoURL" style="max-width:100px" alt="@pizza.Nome">
-                        </td>
-                        <td class="align-middle">@pizza.Nome</td>
-                        <td class="align-middle">@pizza.Preco</td>
-                    </tr>
-                }
+                <a class="btn btn-danger mt-1" asp-action="Deletar" asp-route-id="@pizza.Id">
+                    <i class="fa-solid fa-trash-can"></i>
+                    Excluir
+                </a>
+            </div>
+        </td>
+        <td class="align-middle">
+            <img src="@pizza.FotoURL" style="max-width:100px" alt="@pizza.Nome">
+        </td>
+        <td class="align-middle">@pizza.Nome</td>
+        <td class="align-middle">@pizza.Preco</td>
+    </tr>}
             </tbody>
         </table>
 

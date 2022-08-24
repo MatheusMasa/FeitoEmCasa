@@ -39,11 +39,11 @@ namespace PizzariaMVCAtivdade.Controllers
             return View(result);
         }
 
-        [HttpPost,ActionName("Atualizar")]
+        [HttpPost,ActionName("Atualizar Sabor")]
         public IActionResult ConfirmarAtualizar(int id, PostSaborDTO saborDto)
         {
             var result = _context.Sabores.FirstOrDefault(s => s.Id == id);
-            result.AtualizarDados(saborDto.Nome, saborDto.FotoURL);
+            result.Atualizar(saborDto.Nome, saborDto.FotoURL);
             _context.Sabores.Update(result);
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
@@ -53,7 +53,7 @@ namespace PizzariaMVCAtivdade.Controllers
             var result = _context.Sabores.FirstOrDefault(s => s.Id == id);
             return View(result); ;
         }
-        [HttpPost,ActionName("Deletar")]
+        [HttpPost,ActionName("Deletar Sabor")]
         public IActionResult ConfirmarDeletar(int id)
         {
             var result = _context.Sabores.FirstOrDefault(s => s.Id == id);

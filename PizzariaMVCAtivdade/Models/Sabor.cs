@@ -14,7 +14,7 @@ namespace PizzariaMVCAtivdade.Models
             FotoURL = fotoURL;
         }
 
-        // Contrato entidade
+        // Inicio de Contrato
 
         public int Id { get; set; }
 
@@ -22,7 +22,7 @@ namespace PizzariaMVCAtivdade.Models
 
         public DateTime DataAlteracao { get; set; }
 
-        // Fim do contrato entidade
+        // Fim do contrato 
 
         public string Nome { get; set; }
 
@@ -30,7 +30,7 @@ namespace PizzariaMVCAtivdade.Models
 
         public List<PizzaSabor> PizzaSabores { get; set; }
 
-        public void AtualizarDados(string nome, string fotoURL)
+        public void Atualizar(string nome, string fotoURL)
         {
             Nome = nome;
             FotoURL = fotoURL;

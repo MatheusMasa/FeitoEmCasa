@@ -16,7 +16,7 @@ namespace PizzariaMVCAtivdade.Models
             DataAlteracao = DataCadastro;
         }
 
-        // Contrato entidade
+        //Inicio de Contrato
 
         public int Id { get; set; }
 
@@ -24,14 +24,14 @@ namespace PizzariaMVCAtivdade.Models
 
         public DateTime DataAlteracao { get; set; }
 
-        // Fim do contrato entidade
+        //Fim de Contrato
 
         public string Nome { get; set; }
 
         public List<Pizza> Pizzas { get; set; }
 
 
-        public void AtualizarDados(string nome)
+        public void Atualizar (string nome)
         {
             Nome = nome;
             DataAlteracao = DateTime.Now;

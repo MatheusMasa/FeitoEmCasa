@@ -10,7 +10,7 @@ namespace PizzariaMVCAtivdade.Models.ViewModels
         public string Nome { get; set; }
         public string FotoURL { get; set; }
         public decimal Preco { get; set; }
-        public int TamanhoId { get; set; }
-        public List<int> SaboresId { get; set; }
+        public int Tamanho { get; set; }
+        public List<int> Sabores { get; set; }
     }
 }

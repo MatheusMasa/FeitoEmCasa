@@ -33,7 +33,7 @@ namespace PizzariaMVCAtivdade.Controllers
             return View();
         }
 
-        [HttpPost, ActionName("Criar")]
+        [HttpPost, ActionName("Criar Pizza")]
         public IActionResult CriarConfirmar(PostPizzaDTO pizzaDto)
         {
             Pizza pizza = new Pizza
@@ -41,12 +41,12 @@ namespace PizzariaMVCAtivdade.Controllers
                 pizzaDto.Nome,
                 pizzaDto.FotoURL,
                 pizzaDto.Preco,
-                pizzaDto.TamanhoId
+                pizzaDto.Tamanho
             );
             _context.Add(pizza);
             _context.SaveChanges();
 
-            foreach (var saborId in pizzaDto.SaboresId)
+            foreach (var saborId in pizzaDto.Sabores)
             {
                 var s = new PizzaSabor(pizza.Id,saborId);
                 _context.PizzasSabores.Add(s);
